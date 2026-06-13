@@ -11,3 +11,6 @@ console.log(typeof false)
 console.log(typeof null)
 console.log(typeof undefined)
 console.log(typeof(age))
+
+//itw
+console.log(typeof email)
