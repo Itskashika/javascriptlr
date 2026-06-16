@@ -27,5 +27,39 @@ function loginUserMessage(username="user"){
     }
     return `${username} just logged in`
 }
-console.log(loginUserMessage("pia"))
-console.log(loginUserMessage())
+// console.log(loginUserMessage("pia"))
+// console.log(loginUserMessage())
+
+//where number of arguments are not fixed --> to solve this we use rest operator sybolise as ... 
+//here ... name (rest/spread) depend on working
+
+function calculateCartPrice(val1,...num1){
+    return num1
+}
+//only print first value
+//console.log(calculateCartPrice(200,300,500))
+
+//function with object
+const user={
+    username:"kayle",
+    price :200
+}
+
+function handleObject(anyobj){
+ console.log(`USERNAME IS ${anyobj.username} and price is ${anyobj.price}`)
+}
+//handleObject(user)
+
+//directobject pass
+handleObject({
+    username:"kim",
+    price :400
+})
+
+//pass array to function
+const arr=[2000,4000,609,676]
+function returnArraysecondvalue(myarr){
+    return myarr[1]
+}
+// console.log(returnArraysecondvalue(arr))
+console.log(returnArraysecondvalue([2000,4000,609,676]))
