@@ -54,6 +54,7 @@ const programming=["js","rb","cpp","java","py"]
 //Maps are not iterable so we cant use for..in loop for Map
 
 // //FOR EACH with call back function
+//call back function do not have names
 // //Passing callback means give me the function to operate
 // programming.forEach( function (item){ console.log(`hey i am ${item}`)})
 
@@ -63,6 +64,24 @@ const programming=["js","rb","cpp","java","py"]
 // }
 // programming.forEach(printme)
 
-programming.forEach((item,index,arr)=>{
-     console.log(item,index,arr)
+// programming.forEach((item,index,arr)=>{
+//      console.log(item,index,arr)
+// })
+ 
+const myCoding=[
+    {
+        languageName: "Javascript",
+        languagefile:"js"
+    },
+    {
+        languageName: "C++",
+        languagefile:"cpp"
+    },
+    {
+        languageName: "JAVA",
+        languagefile:"java"
+    }
+];
+myCoding.forEach((item) =>{
+    console.log(item.languageName);
 })
