@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Part 4</title>
+</head>
+<body style="background-color:#212121;color :whitesmoke">
+    <ul class="languages">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    //to add item 
+    function addLanguage(language){
+       const li= document.createElement('li');
+       li.innerHTML=`${language}`
+document.querySelector('.languages').appendChild(li)
+    }
+    addLanguage("Java");
+    addLanguage("C++")
+
+    //optimize way: as we do not need to traverse whole tree in this
+    function addoptilang(language){
+        const li= document.createElement('li');
+        li.appendChild(document.createTextNode(language))
+
+        document.querySelector('.languages').appendChild(li)
+    }
+    addoptilang("Python")
+    addoptilang("Typescript")
+
+//editing
+// Select the second <li> element from the document.
+// nth-child(2) means "the second child of its parent".
+const secondlang = document.querySelector('li:nth-child(2)');
+
+// Create a brand new <li> element.
+// At this point, it exists only in JavaScript memory.
+// It is NOT visible on the webpage yet.
+const newli = document.createElement("li");
+
+// Add text inside the newly created <li>.
+// Now the element looks like: <li>mojo</li>
+// Still not visible because it hasn't been added to the DOM.
+newli.textContent = "mojo";
+
+// Replace the old second <li> with the new <li>.
+// Old: <li>Java</li>
+// New: <li>mojo</li>
+secondlang.replaceWith(newli);
+
+
+//first javascript  with react
+const firstlang=document.querySelector("li:nth-child(1)")
+const newlang=document.createElement('li')
+newlang.textContent="React"
+firstlang.replaceWith(newlang)
+
+//remove
+const lastlang=document.querySelector('li:last-child')
+lastlang.remove()
+
+
+</script>
+</html>
